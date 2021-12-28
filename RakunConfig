@@ -1,0 +1,23 @@
+name: Environment Name
+version: 1.0.0
+buildversion: 1
+agents:
+  drawing_agent:
+    name: DrawingAgent
+    code: agents/drawing_agent.py
+    type: ""
+    initconfigs:
+      config1:
+        name: ConfigOne
+        type: ""
+        value: ""
+#  agent2:
+#    name: AgentTwo
+#    code: agents/sample_agent_two.py
+#    type: ""
+
+workdir: E:\Research\Rakun\art_drawing_agent
+communicationurl: "127.0.0.1:9536"
+requiredfiles:
+  requirements.txt
+displayserverurl: ""
