@@ -1,3 +1,4 @@
+import asyncio
 import logging
 
 from agents import Agent
@@ -27,29 +28,39 @@ class DrawingAgent:
         log.info("Agent AgentOne Stopping...")
 
     async def execute(self, *args, **kwargs):
-        image_width = 1600
-        image_height = 1600
-        pixel_size = 8
 
-        original_image = Image.open('./data/sample_1.jpg').resize((image_width, image_height))
-        original_image = np.array(original_image)
-
-        run_id, gen_image = await self.draw_image(image_width, image_height, pixel_size)
-        gen_image = np.array(gen_image)
-
-        log.info(f"image shape: {original_image.shape} {gen_image.shape}")
-
-        uqi_score = uqi(gen_image, original_image)
-        log.info(f"{run_id} MSE score: {uqi_score}")
-
-        plt.imshow(gen_image)
-
-        f = plt.figure()
-        f.add_subplot(1, 2, 1)
-        plt.imshow(original_image)
-        f.add_subplot(1, 2, 2)
-        plt.imshow(gen_image)
-        plt.show()
+        await self.dynamic_agent(Agent.ColorAgent, {
+            'name': 'agent_one',
+            'color': 'red'
+        })
+        await self.dynamic_agent(Agent.ColorAgent, {
+            'name': 'agent_two',
+            'color': 'green'
+        })
+        await asyncio.sleep(2)
+        # image_width = 1600
+        # image_height = 1600
+        # pixel_size = 8
+        #
+        # original_image = Image.open('./data/sample_1.jpg').resize((image_width, image_height))
+        # original_image = np.array(original_image)
+        #
+        # run_id, gen_image = await self.draw_image(image_width, image_height, pixel_size)
+        # gen_image = np.array(gen_image)
+        #
+        # log.info(f"image shape: {original_image.shape} {gen_image.shape}")
+        #
+        # uqi_score = uqi(gen_image, original_image)
+        # log.info(f"{run_id} MSE score: {uqi_score}")
+        #
+        # plt.imshow(gen_image)
+        #
+        # f = plt.figure()
+        # f.add_subplot(1, 2, 1)
+        # plt.imshow(original_image)
+        # f.add_subplot(1, 2, 2)
+        # plt.imshow(gen_image)
+        # plt.show()
 
     async def draw_image(self, image_width, image_height, pixel_size):
         run_id = uuid.uuid1()

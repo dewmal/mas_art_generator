@@ -2,14 +2,16 @@ import logging
 
 from agents import Agent
 
-log = logging.getLogger(Agent.AgentTwo)
+log = logging.getLogger(Agent.ColorAgent)
 
 
-class AgentTwo:
-    #publish = None # No need to assign it will automatically assigned by rakun
+class ColorAgent:
+    # publish = None # No need to assign it will automatically assigned by rakun
 
-    def __init__(self, *args, **kwargs):
-        log.info(f"{self} Start")
+    def __init__(self, name, color, *args, **kwargs):
+        self.name = name
+        self.color = color
+        log.info(f"{self} Start {args} {kwargs}")
 
     async def start(self):
         log.info("Agent AgentTwo Starting...")
@@ -24,5 +26,6 @@ class AgentTwo:
         log.info("RUN")
         while True:
             await self.publish({
-                "name": "AgentTwo"
+                "name": self.name,
+                "color": self.color
             })

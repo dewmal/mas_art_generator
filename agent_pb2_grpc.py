@@ -29,6 +29,11 @@ class BroadcastStub(object):
                 request_serializer=agent__pb2.Message.SerializeToString,
                 response_deserializer=agent__pb2.Close.FromString,
                 )
+        self.StartDynamicAgent = channel.unary_unary(
+                '/api.agent.Broadcast/StartDynamicAgent',
+                request_serializer=agent__pb2.DynamicAgent.SerializeToString,
+                response_deserializer=agent__pb2.Close.FromString,
+                )
 
 
 class BroadcastServicer(object):
@@ -52,6 +57,12 @@ class BroadcastServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def StartDynamicAgent(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_BroadcastServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -68,6 +79,11 @@ def add_BroadcastServicer_to_server(servicer, server):
             'BroadcastMessage': grpc.unary_unary_rpc_method_handler(
                     servicer.BroadcastMessage,
                     request_deserializer=agent__pb2.Message.FromString,
+                    response_serializer=agent__pb2.Close.SerializeToString,
+            ),
+            'StartDynamicAgent': grpc.unary_unary_rpc_method_handler(
+                    servicer.StartDynamicAgent,
+                    request_deserializer=agent__pb2.DynamicAgent.FromString,
                     response_serializer=agent__pb2.Close.SerializeToString,
             ),
     }
@@ -127,6 +143,23 @@ class Broadcast(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/api.agent.Broadcast/BroadcastMessage',
             agent__pb2.Message.SerializeToString,
+            agent__pb2.Close.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def StartDynamicAgent(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/api.agent.Broadcast/StartDynamicAgent',
+            agent__pb2.DynamicAgent.SerializeToString,
             agent__pb2.Close.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

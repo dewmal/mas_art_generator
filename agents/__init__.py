@@ -2,4 +2,4 @@ class Agent:
 
     DrawingAgent = "DrawingAgent"
 
-    AgentTwo = "AgentTwo"
+    ColorAgent = "ColorAgent"

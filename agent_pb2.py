@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z\033github.com/syigen/rakun/api',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x0b\x61gent.proto\x12\tapi.agent\x1a\x1fgoogle/protobuf/timestamp.proto\"!\n\x05\x41gent\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\"\n\x04\x44\x61ta\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c\"\x98\x02\n\x07Message\x12\n\n\x02id\x18\x01 \x01(\t\x12 \n\x06sender\x18\x02 \x01(\x0b\x32\x10.api.agent.Agent\x12 \n\x07\x63ontent\x18\x03 \x03(\x0b\x32\x0f.api.agent.Data\x12\x12\n\nrequest_id\x18\x04 \x01(\t\x12*\n\x04type\x18\x06 \x01(\x0e\x32\x17.api.agent.Message.TypeH\x00\x88\x01\x01\x12\x0c\n\x04tags\x18\x07 \x03(\t\x12-\n\ttimestamp\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"7\n\x04Type\x12\n\n\x06SYSTEM\x10\x00\x12\t\n\x05\x41GENT\x10\x01\x12\x0b\n\x07\x43OMMAND\x10\x02\x12\x0b\n\x07\x44ISPLAY\x10\x03\x42\x07\n\x05_type\"h\n\x07\x43onnect\x12\x1e\n\x04user\x18\x01 \x01(\x0b\x32\x10.api.agent.Agent\x12\x0e\n\x06\x61\x63tive\x18\x02 \x01(\x08\x12-\n\ttimestamp\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"Y\n\tTimeDelta\x12-\n\ttimestamp\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1d\n\x04meta\x18\x02 \x03(\x0b\x32\x0f.api.agent.Data\"\x07\n\x05\x43lose2\xb7\x01\n\tBroadcast\x12\x38\n\x0c\x43reateStream\x12\x12.api.agent.Connect\x1a\x12.api.agent.Message0\x01\x12\x36\n\x08SyncTime\x12\x12.api.agent.Connect\x1a\x14.api.agent.TimeDelta0\x01\x12\x38\n\x10\x42roadcastMessage\x12\x12.api.agent.Message\x1a\x10.api.agent.CloseB\x1dZ\x1bgithub.com/syigen/rakun/apib\x06proto3'
+  serialized_pb=b'\n\x0b\x61gent.proto\x12\tapi.agent\x1a\x1fgoogle/protobuf/timestamp.proto\"!\n\x05\x41gent\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\"\n\x04\x44\x61ta\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c\"&\n\x08InitData\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\"\x98\x02\n\x07Message\x12\n\n\x02id\x18\x01 \x01(\t\x12 \n\x06sender\x18\x02 \x01(\x0b\x32\x10.api.agent.Agent\x12 \n\x07\x63ontent\x18\x03 \x03(\x0b\x32\x0f.api.agent.Data\x12\x12\n\nrequest_id\x18\x04 \x01(\t\x12*\n\x04type\x18\x06 \x01(\x0e\x32\x17.api.agent.Message.TypeH\x00\x88\x01\x01\x12\x0c\n\x04tags\x18\x07 \x03(\t\x12-\n\ttimestamp\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"7\n\x04Type\x12\n\n\x06SYSTEM\x10\x00\x12\t\n\x05\x41GENT\x10\x01\x12\x0b\n\x07\x43OMMAND\x10\x02\x12\x0b\n\x07\x44ISPLAY\x10\x03\x42\x07\n\x05_type\"h\n\x07\x43onnect\x12\x1e\n\x04user\x18\x01 \x01(\x0b\x32\x10.api.agent.Agent\x12\x0e\n\x06\x61\x63tive\x18\x02 \x01(\x08\x12-\n\ttimestamp\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"Y\n\tTimeDelta\x12-\n\ttimestamp\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1d\n\x04meta\x18\x02 \x03(\x0b\x32\x0f.api.agent.Data\"\x07\n\x05\x43lose\"F\n\x0c\x44ynamicAgent\x12\x0c\n\x04name\x18\x01 \x01(\t\x12(\n\x0binitConfigs\x18\x02 \x03(\x0b\x32\x13.api.agent.InitData2\xf7\x01\n\tBroadcast\x12\x38\n\x0c\x43reateStream\x12\x12.api.agent.Connect\x1a\x12.api.agent.Message0\x01\x12\x36\n\x08SyncTime\x12\x12.api.agent.Connect\x1a\x14.api.agent.TimeDelta0\x01\x12\x38\n\x10\x42roadcastMessage\x12\x12.api.agent.Message\x1a\x10.api.agent.Close\x12>\n\x11StartDynamicAgent\x12\x17.api.agent.DynamicAgent\x1a\x10.api.agent.CloseB\x1dZ\x1bgithub.com/syigen/rakun/apib\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,])
 
@@ -56,8 +56,8 @@ _MESSAGE_TYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=347,
-  serialized_end=402,
+  serialized_start=387,
+  serialized_end=442,
 )
 _sym_db.RegisterEnumDescriptor(_MESSAGE_TYPE)
 
@@ -140,6 +140,45 @@ _DATA = _descriptor.Descriptor(
 )
 
 
+_INITDATA = _descriptor.Descriptor(
+  name='InitData',
+  full_name='api.agent.InitData',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='api.agent.InitData.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='api.agent.InitData.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=130,
+  serialized_end=168,
+)
+
+
 _MESSAGE = _descriptor.Descriptor(
   name='Message',
   full_name='api.agent.Message',
@@ -215,8 +254,8 @@ _MESSAGE = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=131,
-  serialized_end=411,
+  serialized_start=171,
+  serialized_end=451,
 )
 
 
@@ -261,8 +300,8 @@ _CONNECT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=413,
-  serialized_end=517,
+  serialized_start=453,
+  serialized_end=557,
 )
 
 
@@ -300,8 +339,8 @@ _TIMEDELTA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=519,
-  serialized_end=608,
+  serialized_start=559,
+  serialized_end=648,
 )
 
 
@@ -325,8 +364,47 @@ _CLOSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=610,
-  serialized_end=617,
+  serialized_start=650,
+  serialized_end=657,
+)
+
+
+_DYNAMICAGENT = _descriptor.Descriptor(
+  name='DynamicAgent',
+  full_name='api.agent.DynamicAgent',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='name', full_name='api.agent.DynamicAgent.name', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='initConfigs', full_name='api.agent.DynamicAgent.initConfigs', index=1,
+      number=2, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=659,
+  serialized_end=729,
 )
 
 _MESSAGE.fields_by_name['sender'].message_type = _AGENT
@@ -341,12 +419,15 @@ _CONNECT.fields_by_name['user'].message_type = _AGENT
 _CONNECT.fields_by_name['timestamp'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 _TIMEDELTA.fields_by_name['timestamp'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 _TIMEDELTA.fields_by_name['meta'].message_type = _DATA
+_DYNAMICAGENT.fields_by_name['initConfigs'].message_type = _INITDATA
 DESCRIPTOR.message_types_by_name['Agent'] = _AGENT
 DESCRIPTOR.message_types_by_name['Data'] = _DATA
+DESCRIPTOR.message_types_by_name['InitData'] = _INITDATA
 DESCRIPTOR.message_types_by_name['Message'] = _MESSAGE
 DESCRIPTOR.message_types_by_name['Connect'] = _CONNECT
 DESCRIPTOR.message_types_by_name['TimeDelta'] = _TIMEDELTA
 DESCRIPTOR.message_types_by_name['Close'] = _CLOSE
+DESCRIPTOR.message_types_by_name['DynamicAgent'] = _DYNAMICAGENT
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Agent = _reflection.GeneratedProtocolMessageType('Agent', (_message.Message,), {
@@ -362,6 +443,13 @@ Data = _reflection.GeneratedProtocolMessageType('Data', (_message.Message,), {
   # @@protoc_insertion_point(class_scope:api.agent.Data)
   })
 _sym_db.RegisterMessage(Data)
+
+InitData = _reflection.GeneratedProtocolMessageType('InitData', (_message.Message,), {
+  'DESCRIPTOR' : _INITDATA,
+  '__module__' : 'agent_pb2'
+  # @@protoc_insertion_point(class_scope:api.agent.InitData)
+  })
+_sym_db.RegisterMessage(InitData)
 
 Message = _reflection.GeneratedProtocolMessageType('Message', (_message.Message,), {
   'DESCRIPTOR' : _MESSAGE,
@@ -391,6 +479,13 @@ Close = _reflection.GeneratedProtocolMessageType('Close', (_message.Message,), {
   })
 _sym_db.RegisterMessage(Close)
 
+DynamicAgent = _reflection.GeneratedProtocolMessageType('DynamicAgent', (_message.Message,), {
+  'DESCRIPTOR' : _DYNAMICAGENT,
+  '__module__' : 'agent_pb2'
+  # @@protoc_insertion_point(class_scope:api.agent.DynamicAgent)
+  })
+_sym_db.RegisterMessage(DynamicAgent)
+
 
 DESCRIPTOR._options = None
 
@@ -401,8 +496,8 @@ _BROADCAST = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=620,
-  serialized_end=803,
+  serialized_start=732,
+  serialized_end=979,
   methods=[
   _descriptor.MethodDescriptor(
     name='CreateStream',
@@ -430,6 +525,16 @@ _BROADCAST = _descriptor.ServiceDescriptor(
     index=2,
     containing_service=None,
     input_type=_MESSAGE,
+    output_type=_CLOSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='StartDynamicAgent',
+    full_name='api.agent.Broadcast.StartDynamicAgent',
+    index=3,
+    containing_service=None,
+    input_type=_DYNAMICAGENT,
     output_type=_CLOSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
